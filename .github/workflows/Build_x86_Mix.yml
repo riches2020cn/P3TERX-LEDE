@@ -86,14 +86,12 @@ jobs:
         
     - name: Import external feeds - poweroff
       working-directory: /workdir/openwrt
-      run: |
-        git clone https://github.com/sky2016cn/luci-app-poweroff.git package/luci-app-poweroff
+      run: git clone https://github.com/sky2016cn/luci-app-poweroff.git package/luci-app-poweroff
     
     # 范例 1: 注意拉取命令的保存路径
     #- name: Import external feeds - OpenAppFilter
     #  working-directory: /workdir/openwrt
-    #  run: |
-    #    git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+    #  run: git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
     
     # 范例 2: 注意拉取命令的保存路径
     #- name: Import external feeds - luci-theme-argon
