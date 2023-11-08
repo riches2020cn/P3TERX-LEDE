@@ -73,7 +73,7 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
  
-  # 自己添加再次执行 Install feeds
+    # 自己添加再次执行 Install feeds
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
            
