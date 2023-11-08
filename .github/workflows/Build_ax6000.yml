@@ -83,10 +83,6 @@ jobs:
         git clone --depth=1 https://github.com/vernesong/OpenClash.git package/OpenClash
         mv package/OpenClash/luci-app-openclash package
         rm -rf package/OpenClash
-
-    #- name: Import external feeds - poweroff
-    #  working-directory: /workdir/openwrt
-    #  run: git clone https://github.com/sky2016cn/luci-app-poweroff.git package/luci-app-poweroff
     
     # 范例 1: 注意拉取命令的保存路径
     #- name: Import external feeds - OpenAppFilter
