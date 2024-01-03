@@ -44,19 +44,6 @@ jobs:
         docker rmi `docker images -q`
         echo "Deleting files, please wait ..."
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -y purge \
-          azure-cli \
-          ghc* \
-          zulu* \
-          hhvm \
-          llvm* \
-          firefox \
-          google* \
-          dotnet* \
-          powershell \
-          openjdk* \
-          mysql* \
-          php*  
         sudo -E apt-get update
         sudo -E apt-get -y install $(curl -fsSL raw.githubusercontent.com/sky2016cn/AutoBuild-lede/master/depends-lede)
         sudo -E apt-get -y autoremove --purge
