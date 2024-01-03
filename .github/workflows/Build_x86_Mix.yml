@@ -40,7 +40,6 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         set +e
         docker rmi `docker images -q`
         echo "Deleting files, please wait ..."
