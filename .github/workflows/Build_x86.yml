@@ -125,24 +125,26 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
            
     - name: Import external feeds - OpenClash
-      working-directory: /workdir/openwrt
+      working-directory: ./openwrt
       run: |
         git clone --depth=1 https://github.com/vernesong/OpenClash.git package/OpenClash
         mv package/OpenClash/luci-app-openclash package
         rm -rf package/OpenClash
         
     - name: Import external feeds - poweroff
-      working-directory: /workdir/openwrt
-      run: git clone https://github.com/sky2016cn/luci-app-poweroff.git package/luci-app-poweroff
+      working-directory: ./openwrt
+      run: | 
+        git clone https://github.com/sky2016cn/luci-app-poweroff.git package/luci-app-poweroff
     
     # 范例 1: 注意拉取命令的保存路径
     #- name: Import external feeds - OpenAppFilter
-    #  working-directory: /workdir/openwrt
-    #  run: git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+    #  working-directory: ./openwrt
+    #  run: |
+    #    git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
     
     # 范例 2: 注意拉取命令的保存路径
     #- name: Import external feeds - luci-theme-argon
-    #  working-directory: /workdir/openwrt
+    #  working-directory: ./openwrt
     #  run: |
     #    rm -rf feeds/luci/themes/luci-theme-argon
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
