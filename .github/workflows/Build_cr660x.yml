@@ -138,7 +138,7 @@ jobs:
     
     # 范例 1: 注意拉取命令的保存路径
     #- name: Import external feeds - luci-theme-argon
-    #  working-directory: /workdir/openwrt
+    #  working-directory: ./openwrt
     #  run: |
     #    rm -rf feeds/luci/themes/luci-theme-argon
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
