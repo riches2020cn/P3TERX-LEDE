@@ -137,7 +137,7 @@ jobs:
     #  run: |
     #    git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
     
-    # 范例 2: 注意拉取命令的保存路径
+    # 范例 2: 注意保存路径是feeds，替换原有的argon皮肤，如果Lean全部取消了argon皮肤，需要更改保存路径到package/luci-theme-argon
     #- name: Import external feeds - luci-theme-argon
     #  working-directory: ./openwrt
     #  run: |
