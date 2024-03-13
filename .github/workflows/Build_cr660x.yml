@@ -113,13 +113,6 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        
-    # 范例 1: 添加 argon 皮肤，因为拉取到 feeds 文件夹，都必须在更新 feeds 命令之前拉取。原版OpenWrt需要去除18.06分支，拉取主分支
-    #- name: Import external feeds - luci-theme-argon
-    #  working-directory: ./openwrt
-    #  run: |
-    #    rm -rf feeds/luci/themes/luci-theme-argon
-    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -130,8 +123,7 @@ jobs:
     # 自己添加再次执行 Install feeds
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-
-    # 范例 2: 注意拉取命令的保存路径           
+           
     #- name: Import external feeds - OpenClash
     #  working-directory: ./openwrt
     #  run: |
@@ -139,11 +131,17 @@ jobs:
     #    mv package/OpenClash/luci-app-openclash package
     #    rm -rf package/OpenClash
 
-    # 范例 3: 注意拉取命令的保存路径
     #- name: Import external feeds - poweroff
     #  working-directory: ./openwrt
     #  run: |
     #    git clone https://github.com/sky2016cn/luci-app-poweroff.git package/luci-app-poweroff
+    
+    # 范例 1: 注意保存路径是feeds，替换原有的argon皮肤，如果Lean全部取消了argon皮肤，需要更改保存路径到package/luci-theme-argon
+    #- name: Import external feeds - luci-theme-argon
+    #  working-directory: ./openwrt
+    #  run: |
+    #    rm -rf feeds/luci/themes/luci-theme-argon
+    #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
     - name: Load custom configuration
       run: |
