@@ -19,5 +19,9 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' package/lean/default-settings/f
 #3. 修改默认皮肤
 sed -i 's/+luci-theme-bootstrap/+luci-theme-argon-mod/g' feeds/luci/collections/luci/Makefile
 
-#4. 修改 x86 内核版本
+#4. 修改WiFi名称为Hello,密码password
+sed -i 's/set wireless.default_radio${devidx}.ssid=OpenWrt/set wireless.default_radio${devidx}.ssid=Hello/g; s/set wireless.default_radio${devidx}.encryption=none/set wireless.default_radio${devidx}.encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh 
+sed -i '/set wireless.default_radio${devidx}.encryption=psk-mixed/a \                                                set wireless.default_radio${devidx}.key=password' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+#5. 修改 x86 内核版本
 #sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=5.15/g' target/linux/x86/Makefile
